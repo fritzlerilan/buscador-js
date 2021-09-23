@@ -28,13 +28,13 @@ const datosBusqueda = {
 
 // Eventos
 document.addEventListener('DOMContentLoaded', () => {
-    mostrarAutos(); //Muestra los autos al cargar
+    mostrarAutos(autos); //Muestra los autos al cargar
     llenarSelect(); //Llena los campos de seleccion segun la informacion en la DB
 
 })
 
 // Event listener para los select de búsqueda
-contenedorFiltros.addEventListener('change', (e) => {
+contenedorFiltros.addEventListener('change', () => {
     filtrarAuto();
 })
 
@@ -61,7 +61,8 @@ selectColor.addEventListener('change', (e) => {
 })
 
 // Funciones
-function mostrarAutos() {
+function mostrarAutos(autos) {
+    limpiarResultados();
     autos.forEach(auto => {
         // Se crea el elemento HTML
         const { marca, modelo, year, precio, puertas, color, transmision } = auto;
@@ -131,8 +132,12 @@ function llenarSelectTransmision() {
 
 //Funcion que filtra en base a la búsqueda.
 function filtrarAuto() {
-    const resultado = autos.filter(filtrarMarca).filter(filtrarYear);
-    console.log(resultado);
+    const resultado = autos.filter(filtrarMarca)
+        .filter(filtrarYear)
+        .filter(filtrarMinimo)
+        .filter(filtrarMaximo);
+
+    mostrarAutos(resultado);
 }
 
 function filtrarMarca(auto) {
@@ -149,4 +154,26 @@ function filtrarYear(auto) {
         return auto.year === year;
     }
     return auto;
+}
+
+function filtrarMinimo(auto) {
+    const { minimo } = datosBusqueda;
+    if (minimo) {
+        return auto.precio >= minimo;
+    }
+    return auto;
+}
+
+function filtrarMaximo(auto) {
+    const { maximo } = datosBusqueda;
+    if (maximo) {
+        return auto.precio <= maximo;
+    }
+    return auto;
+}
+
+function limpiarResultados() {
+    while (divResultado.hasChildNodes()) {
+        divResultado.firstChild.remove();
+    }
 }
