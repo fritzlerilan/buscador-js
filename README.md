@@ -7,3 +7,6 @@ Este proyecto es parte del curso [JavaScript Moderno Guía Definitiva Construye 
  - 📄 DOM Scripting
  - 🏹 Arrow Functions
  - ⬆️ High order functions
+
+### Netlify 🌐
+buscador-js-fritzlerilan.netlify.app
