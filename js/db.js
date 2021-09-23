@@ -6,7 +6,7 @@ const autos = [
 		precio: 30000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{ 
         marca: 'Audi', 
@@ -15,7 +15,7 @@ const autos = [
         precio: 40000, 
         puertas: 4, 
         color: 'Negro', 
-        transmision: 'automatico' 
+        transmision: 'Automática' 
     },
 	{
 		marca: 'Ford',
@@ -24,7 +24,7 @@ const autos = [
 		precio: 20000,
 		puertas: 2,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{ 
         marca: 'Audi', 
@@ -33,7 +33,7 @@ const autos = [
         precio: 35000, 
         puertas: 4, 
         color: 'Negro', 
-        transmision: 'automatico' 
+        transmision: 'Automática' 
     },
 	{
 		marca: 'BMW',
@@ -42,7 +42,7 @@ const autos = [
 		precio: 70000,
 		puertas: 4,
 		color: 'Rojo',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'Mercedes Benz',
@@ -51,7 +51,7 @@ const autos = [
 		precio: 25000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'Chevrolet',
@@ -60,7 +60,7 @@ const autos = [
 		precio: 60000,
 		puertas: 2,
 		color: 'Rojo',
-		transmision: 'manual'
+		transmision: 'Manual'
 	},
 	{ 
         marca: 'Ford', 
@@ -69,7 +69,7 @@ const autos = [
         precio: 80000, 
         puertas: 2, 
         color: 'Rojo', 
-        transmision: 'manual' 
+        transmision: 'Manual' 
     },
 	{
 		marca: 'Dodge',
@@ -78,7 +78,7 @@ const autos = [
 		precio: 40000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{ 
         marca: 'Audi', 
@@ -88,7 +88,7 @@ const autos = [
         puertas: 2, 
         color: 'Negro', 
         transmision: 
-        'manual' 
+        'Manual' 
     },
 	{
 		marca: 'Dodge',
@@ -97,7 +97,7 @@ const autos = [
 		precio: 25000,
 		puertas: 2,
 		color: 'Rojo',
-		transmision: 'manual'
+		transmision: 'Manual'
 	},
 	{
 		marca: 'Mercedes Benz',
@@ -106,7 +106,7 @@ const autos = [
 		precio: 45000,
 		puertas: 4,
 		color: 'Azul',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'BMW',
@@ -115,7 +115,7 @@ const autos = [
 		precio: 90000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{ 
         marca: 'Ford', 
@@ -124,7 +124,7 @@ const autos = [
         precio: 60000, 
         puertas: 2, 
         color: 'Negro', 
-        transmision: 'manual' 
+        transmision: 'Manual' 
     },
 	{
 		marca: 'Dodge',
@@ -133,7 +133,7 @@ const autos = [
 		precio: 35000,
 		puertas: 2,
 		color: 'Azul',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'BMW',
@@ -142,7 +142,7 @@ const autos = [
 		precio: 50000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'BMW',
@@ -151,7 +151,7 @@ const autos = [
 		precio: 80000,
 		puertas: 4,
 		color: 'Negro',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{
 		marca: 'Mercedes Benz',
@@ -160,7 +160,7 @@ const autos = [
 		precio: 40000,
 		puertas: 4,
 		color: 'Blanco',
-		transmision: 'automatico'
+		transmision: 'Automática'
 	},
 	{ 
         marca: 'Audi', 
@@ -169,6 +169,6 @@ const autos = [
         precio: 30000, 
         puertas: 4, 
         color: 'Azul', 
-        transmision: 'automatico' 
+        transmision: 'Automática' 
     }
 ];
