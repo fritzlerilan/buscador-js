@@ -10,6 +10,8 @@ const selectColor = document.querySelector('#color');
 // Contenedor para los resultados.
 const divResultado = document.querySelector('#resultado');
 
+// Contenedor de filtros para registrar cambios globalmente
+const contenedorFiltros = document.querySelector('#filtros');
 
 
 // Generar un objeto con la búsqueda
@@ -32,11 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Event listener para los select de búsqueda
-selectMarca.addEventListener('change', (e) => {
-    datosBusqueda.marca = e.target.value;
-    console.log(datosBusqueda);
+contenedorFiltros.addEventListener('change', (e) => {
+    filtrarAuto();
 })
 
+selectMarca.addEventListener('change', (e) => {
+    datosBusqueda.marca = e.target.value;
+})
 selectYear.addEventListener('change', (e) => {
     datosBusqueda.year = e.target.value;
 })
@@ -123,4 +127,18 @@ function llenarSelectTransmision() {
         selectTransmision.appendChild(option);
     })
 
+}
+
+//Funcion que filtra en base a la búsqueda.
+function filtrarAuto() {
+    const resultado = autos.filter(filtrarMarca);
+    console.log(resultado);
+}
+
+function filtrarMarca(auto) {
+    const { marca } = datosBusqueda;
+    if ( marca ) {
+        return auto.marca === marca;
+    }
+    return auto;
 }
