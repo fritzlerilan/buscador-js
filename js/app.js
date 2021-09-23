@@ -1,8 +1,29 @@
 // Variables
-const divResultado = document.querySelector('#resultado');
-const selectYear = document.querySelector('#year');
 const selectMarca = document.querySelector('#marca');
+const selectYear = document.querySelector('#year');
+const selectMinimo = document.querySelector('#minimo');
+const selectMaximo = document.querySelector('#maximo');
+const selectPuertas = document.querySelector('#puertas');
 const selectTransmision = document.querySelector('#transmision');
+const selectColor = document.querySelector('#color');
+
+// Contenedor para los resultados.
+const divResultado = document.querySelector('#resultado');
+
+
+
+// Generar un objeto con la búsqueda
+const datosBusqueda = {
+    marca: '',
+    year: '',
+    minimo: '',
+    maximo: '',
+    puertas: '',
+    transmision: '',
+    color: '',
+}
+
+
 // Eventos
 document.addEventListener('DOMContentLoaded', () => {
     mostrarAutos(); //Muestra los autos al cargar
@@ -10,11 +31,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+// Event listener para los select de búsqueda
+selectMarca.addEventListener('change', (e) => {
+    datosBusqueda.marca = e.target.value;
+    console.log(datosBusqueda);
+})
+
+selectYear.addEventListener('change', (e) => {
+    datosBusqueda.year = e.target.value;
+})
+selectMinimo.addEventListener('change', (e) => {
+    datosBusqueda.minimo = e.target.value;
+})
+selectMaximo.addEventListener('change', (e) => {
+    datosBusqueda.maximo = e.target.value;
+})
+selectPuertas.addEventListener('change', (e) => {
+    datosBusqueda.puertas = e.target.value;
+})
+selectTransmision.addEventListener('change', (e) => {
+    datosBusqueda.transmision = e.target.value;
+})
+selectColor.addEventListener('change', (e) => {
+    datosBusqueda.color = e.target.value;
+})
+
 // Funciones
 function mostrarAutos() {
     autos.forEach(auto => {
         // Se crea el elemento HTML
-        const {marca, modelo, year, precio, puertas, color, transmision} = auto;
+        const { marca, modelo, year, precio, puertas, color, transmision } = auto;
         const autoHTML = document.createElement('p');
 
         autoHTML.textContent = `
@@ -25,7 +71,7 @@ function mostrarAutos() {
     });
 }
 
-function llenarSelect(){
+function llenarSelect() {
     llenarSelectYear();
     llenarSelectMarca();
     llenarSelectTransmision();
@@ -34,8 +80,8 @@ function llenarSelect(){
 function llenarSelectYear() {
     const maxYear = new Date().getFullYear();
     const minYear = maxYear - 10;
-    
-    for(let i = maxYear; i >= minYear; i--) {
+
+    for (let i = maxYear; i >= minYear; i--) {
         const option = document.createElement('option');
         option.value = i;
         option.textContent = i;
@@ -43,7 +89,7 @@ function llenarSelectYear() {
     }
 }
 
-function llenarSelectMarca(){
+function llenarSelectMarca() {
     const marcas = new Set();
 
     autos.forEach(auto => {
@@ -58,10 +104,10 @@ function llenarSelectMarca(){
         option.textContent = marca;
         selectMarca.appendChild(option);
     })
-    
+
 }
 
-function llenarSelectTransmision(){
+function llenarSelectTransmision() {
     const transmisiones = new Set();
 
     autos.forEach(auto => {
@@ -76,5 +122,5 @@ function llenarSelectTransmision(){
         option.textContent = transmision;
         selectTransmision.appendChild(option);
     })
-    
+
 }
